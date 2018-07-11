@@ -30,11 +30,12 @@ export default class App extends React.Component {
         {
           title: "Dead Left",
           img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+      
           set: 0,
           reps: 0,
           weight: 0
         }
-      ]
+      ],
     }
 
   }
@@ -80,3 +81,4 @@ return (
       }
   }
 }
+
