@@ -39,8 +39,10 @@ this.props.analytics(this.props.view-1, sets, reps, weight);
           </label>
           <input  type="submit" value="Submit" />
         </form>
-
-<Graph />
+<div>
+{this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
+</div>
+<Graph  exercise={this.props.state[this.props.view-1]}/>
         </div>
 )
 };
