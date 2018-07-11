@@ -21,32 +21,27 @@ return (
 <div>
         <div className="input--container" >
         <form className="input--style" onSubmit={this.onSubmit}>
-        <label>
-            Exercise Name: {this.props.state[this.props.view-1].title}
+        <label className="label--style">
+      {this.props.state[this.props.view-1].title}
         </label>
         <br></br>
-          <label>
-             Sets:    </label>
+          <label>Sets:</label>
             <input type="number" name="sets" />
       
-          <label>
-             Reps: </label>
+          <label>Reps: </label>
 
             <input type="number" name="reps" />
        
-          <label>
-              Weight: </label>
+          <label> Weight: </label>
             <input type="number" name="weight" />
          
           <input  type="submit" value="Submit" className="btn--style" />
         </form>
-
-{this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
-
+<div className="result-style" >Point:  {this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
 </div>
-
-<Graph />
 </div>
+<Graph  exercise={this.props.state[this.props.view-1]}/>
+        </div>
 )
 };
 }
