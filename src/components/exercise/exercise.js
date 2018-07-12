@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'
 const Exercise = (props) => {
   return (
     <div className="container">

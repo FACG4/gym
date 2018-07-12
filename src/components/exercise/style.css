@@ -20,8 +20,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 
   padding: 3%;
   margin-top: 3%;
+  font-size: 24px;
   border-radius: 15px;
-  font-size: 42px;
   color: #ffff;
   font-weight: bolder;
   /* vertical-align: text-bottom; */
@@ -42,7 +42,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', end
   padding: 3%;
   margin-top: 3%;
   border-radius: 15px;
-  font-size: 42px;
+  font-size: 24px;
   color: #ffff;
   font-weight: bolder;
   /* vertical-align: text-bottom; */

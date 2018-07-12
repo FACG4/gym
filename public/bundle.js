@@ -40733,6 +40733,22 @@ var App = function (_React$Component) {
         reps: 0,
         weight: 0,
         data: []
+      }, {
+        title: "Seated Leg Press",
+        img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
+        set: 0,
+        reps: 0,
+        weight: 0,
+        data: []
+      }, {
+        title: "Lat Pull-Down",
+        img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
+        set: 0,
+        reps: 0,
+        weight: 0,
+        data: []
       }]
     };
 
