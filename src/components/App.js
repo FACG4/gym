@@ -9,6 +9,7 @@ export default class App extends React.Component {
     super(props);
     this.setView = this.setView.bind(this);
     this.analytics = this.analytics.bind(this);
+    this.result = this.result.bind(this);
 
     this.state = {
       view:0,
@@ -18,32 +19,41 @@ export default class App extends React.Component {
           img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
           set: 0,
           reps: 0,
-          weight: 0
+          weight: 0,
+          data:[]
         },
         {
           title: "Bench Press",
           img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
           set: 0,
           reps: 0,
-          weight: 0
+          weight: 0,
+          data:[]
         },
         {
           title: "Dead Left",
           img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
-      
+
           set: 0,
           reps: 0,
-          weight: 0
+          weight: 0,
+          data:[]
         }
       ],
     }
 
   }
-
-  setView(page) {
-this.setState(() => ({ view: page }));
+  result(element, value) {
+    this.setState(() => (this.state.exercises[element]={
+    ...this.state.exercises[element],
+data:this.state.exercises[element].data.concat(value)
+    } ));
 
 }
+  setView(page) {
+this.setState(() => ({ view: page }));
+}
+
   analytics(element, sets, reps, weight) {
 this.setState(() => (this.state.exercises[element]={
 ...this.state.exercises[element],
@@ -55,8 +65,6 @@ this.setState(() => (this.state.exercises[element]={
 }
 
   render() {
-
-    console.table("exer",this.state.exercises);
 
     let title = 'Gymentic Fitness App';
     let subtitle = 'Welcome Aisha';
@@ -73,12 +81,11 @@ this.setState(() => (this.state.exercises[element]={
 default:
 return (
 <div>
-<Header title={title} subtitle={subtitle} />
-<SetExercise state={this.state.exercises} view={this.state.view} analytics={this.analytics} />
+<Header setView={this.setView} title={title} subtitle={subtitle} />
+<SetExercise result={this.result} state={this.state.exercises} view={this.state.view} analytics={this.analytics} />
 </div>
 )
 
       }
   }
 }
-
