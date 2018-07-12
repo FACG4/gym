@@ -37,5 +37,6 @@ console.log(data.datasets[0].data);
 )
 }
 
-
 export default Graph;
+
+
