@@ -14,8 +14,9 @@ let sets = e.target.sets.value;
 let reps = e.target.reps.value;
 let weight = e.target.weight.value;
 this.props.analytics(this.props.view-1, sets, reps, weight);
+let result =  this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps );
+this.props.result(this.props.view-1, result);
 }
-
 
   render() {
       return (
@@ -40,6 +41,7 @@ this.props.analytics(this.props.view-1, sets, reps, weight);
           <input  type="submit" value="Submit" />
         </form>
 <div>
+
 {this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
 </div>
 <Graph  exercise={this.props.state[this.props.view-1]}/>
