@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './header/header';
 import Home from './home/home';
 import SetExercise from './setexercise/setExercise';
+import AddExercise from './addExercise/AddExercise'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.analytics = this.analytics.bind(this);
     this.result = this.result.bind(this);
+    this.addExercise = this.addExercise.bind(this);
 
     this.state = {
       view:0,
@@ -38,6 +40,42 @@ export default class App extends React.Component {
           reps: 0,
           weight: 0,
           data:[]
+        },
+        {
+          title: "Seated Leg Press",
+          img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
+          set: 0,
+          reps: 0,
+          weight: 0,
+          data:[]
+        },
+        {
+          title: "Lat Pull-Down",
+          img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
+          set: 0,
+          reps: 0,
+          weight: 0,
+          data:[]
+        }
+        ,
+        {
+          title: "Triceps Pushdown",
+          img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
+          set: 0,
+          reps: 0,
+          weight: 0,
+          data:[]
+        },
+        {
+          title: "Hanging Leg Raise",
+          img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+          set: 0,
+          reps: 0,
+          weight: 0,
+          data:[]
         }
       ],
     }
@@ -50,6 +88,17 @@ data:this.state.exercises[element].data.concat(value)
     } ));
 
 }
+  addExercise(name) {
+    this.setState(() => (this.state.exercises.unshift({title: name,
+    img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+    set: 0,
+    reps: 0,
+    weight: 0,
+    data:[]
+    })
+     ))};
+
+
   setView(page) {
 this.setState(() => ({ view: page }));
 }
@@ -65,7 +114,7 @@ this.setState(() => (this.state.exercises[element]={
 }
 
   render() {
-
+console.log(this.state.exercises);
     let title = 'Gymentic Fitness App';
     let subtitle = 'Welcome Aisha';
 
@@ -74,6 +123,7 @@ this.setState(() => (this.state.exercises[element]={
         return (
   <div>
 <Header title={title} subtitle={subtitle} />
+<AddExercise addExercise={this.addExercise} />
 <Home exercises={this.state.exercises} setView={this.setView} />
   </div>
 )
