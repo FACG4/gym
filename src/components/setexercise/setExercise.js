@@ -3,10 +3,10 @@ import React from 'react';
 import Graph from '../graph/graph'
 
 export default class setExercise extends React.Component {
-  constructor(props) {
-    super(props);
+constructor(props) {
+super(props);
 this.onSubmit=this.onSubmit.bind(this);
-  }
+}
 
 onSubmit(e){
 e.preventDefault();
@@ -18,31 +18,29 @@ let result =  this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * t
 this.props.result(this.props.view-1, result);
 }
 
-  render() {
-      return (
-        <div>
-        <form onSubmit={this.onSubmit}>
-        <label>
-            Exercise Name: {this.props.state[this.props.view-1].title}
+render() {
+return (
+<div>
+        <div className="input--container" >
+        <form className="input--style" onSubmit={this.onSubmit}>
+        <label className="label--style">
+      {this.props.state[this.props.view-1].title}
         </label>
         <br></br>
-          <label>
-            # Sets:
-            <input type="text" name="sets" />
-          </label>
-          <label>
-            # Reps:
-            <input type="text" name="reps" />
-          </label>
-          <label>
-              Weight:
-            <input type="text" name="weight" />
-          </label>
-          <input  type="submit" value="Submit" />
-        </form>
-<div>
+          <label>Sets:</label>
+            <input type="number" name="sets" />
 
-{this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
+          <label>Reps: </label>
+
+            <input type="number" name="reps" />
+
+          <label> Weight: </label>
+            <input type="number" name="weight" />
+
+          <input  type="submit" value="Submit" className="btn--style" />
+        </form>
+<div className="result-style" >Point:  {this.props.state[this.props.view-1].weight / ( 1.0278 - 0.0278 * this.props.state[this.props.view-1].reps )}
+</div>
 </div>
 <Graph  exercise={this.props.state[this.props.view-1]}/>
         </div>

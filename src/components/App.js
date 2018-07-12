@@ -20,7 +20,7 @@ export default class App extends React.Component {
           set: 0,
           reps: 0,
           weight: 0,
-          data:[30,50]
+          data:[]
         },
         {
           title: "Bench Press",
@@ -28,17 +28,18 @@ export default class App extends React.Component {
           set: 0,
           reps: 0,
           weight: 0,
-          data:[30,20]
+          data:[]
         },
         {
           title: "Dead Left",
           img: 'https://imge.downloadapk.net/e/75/01f92c_150.png',
+
           set: 0,
           reps: 0,
           weight: 0,
-          data:[10,20]
+          data:[]
         }
-      ]
+      ],
     }
 
   }
@@ -64,8 +65,6 @@ this.setState(() => (this.state.exercises[element]={
 }
 
   render() {
-
-    console.table("data",this.state.exercises[0].data);
 
     let title = 'Gymentic Fitness App';
     let subtitle = 'Welcome Aisha';
